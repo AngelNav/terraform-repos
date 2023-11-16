@@ -1,12 +1,14 @@
-[
-  {
-    "name": "my-repo-1",
-    "description": "This is my repo 1",
-    "visibility": "public"
-  },
-  {
-    "name": "my-repo-2",
-    "description": "This is my repo 2",
-    "visibility": "private"
-  }
-]
+{
+  "repositories": [
+    {
+      "name": "my-repo-1",
+      "description": "This is my repo 1",
+      "visibility": "public"
+    },
+    {
+      "name": "my-repo-2",
+      "description": "This is my repo 2",
+      "visibility": "private"
+    }
+  ]
+}
