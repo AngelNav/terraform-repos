@@ -7,3 +7,10 @@ variable "repos_file" {
   type        = string
   description = "The path to the JSON file containing the list of repositories to create"
 }
+
+variable "repositories" {
+  type = list(object({
+    name = string
+  }))
+  description = "List of repositories"
+}
