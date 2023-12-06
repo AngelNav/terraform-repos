@@ -37,6 +37,12 @@ locals {
     trimsuffix(file, ".csv") => csvdecode(file("${local.repo_teams_path}/${file}"))
   }
 
+  # Members 
+  members = csvdecode(file("files/members.csv"))
+
+  # Teams 
+  teams = csvdecode(file("files/teams.csv"))
+
   # Repositories
   repositories = csvdecode(file("files/repositories.csv"))
 }

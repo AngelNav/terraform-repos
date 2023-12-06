@@ -10,10 +10,19 @@ resource "github_team" "all" {
   create_default_maintainer = true
 }
 
-resource "github_team_membership" "members" {
-  for_each = { for tm in local.team_members : tm.name => tm }
+resource "github_team_members" "members" {
+  team_id = github_team.all[each.key].id
 
-  team_id  = each.value.team_id
-  username = each.value.username
-  role     = each.value.role
+  for_each = {
+    for team, members in local.team_members_files : team => members
+  }
+
+  dynamic "members" {
+    for_each = each.value
+
+    content {
+      username = members.value.username
+      role     = members.value.role
+    }
+  }
 }

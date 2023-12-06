@@ -1,4 +1,2 @@
 name,description,privacy
-Security Team,Security Team,closed
-Developer Team,Developer Team,closed
-DevOps Team,DevOps Team,closed
+test-team,Team for testing terraform,closed
